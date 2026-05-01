@@ -95,11 +95,11 @@
       <form id="donorForm" class="mt-8 space-y-5">
         <div>
           <label class="text-[11px] font-bold tracking-widest text-ink-500 mb-2 block">FULL NAME</label>
-          <input name="name" type="text" required placeholder="Jane Doe" class="field" />
+          <input id="name" name="name" type="text" required placeholder="Jane Doe" class="field" />
         </div>
         <div>
           <label class="text-[11px] font-bold tracking-widest text-ink-500 mb-2 block">BLOOD GROUP</label>
-          <select name="bloodGroup" required class="field">
+          <select id="bloodGroup" name="bloodGroup" required class="field">
             <option value="">Select group</option>
             <option>A+</option><option>A-</option><option>B+</option><option>B-</option>
             <option>AB+</option><option>AB-</option><option>O+</option><option>O-</option>
@@ -108,11 +108,11 @@
         <div class="grid grid-cols-2 gap-4">
           <div>
             <label class="text-[11px] font-bold tracking-widest text-ink-500 mb-2 block">LATITUDE</label>
-            <input name="lat" type="number" step="any" required placeholder="22.5726" class="field" />
+           <input id="lat" name="lat" type="number" step="any" required placeholder="22.5726" class="field" />
           </div>
           <div>
             <label class="text-[11px] font-bold tracking-widest text-ink-500 mb-2 block">LONGITUDE</label>
-            <input name="lng" type="number" step="any" required placeholder="88.3639" class="field" />
+           <input id="lng" name="lng" type="number" step="any" required placeholder="88.3639" class="field" />
           </div>
         </div>
         <button type="button" id="locBtn" class="text-sm font-semibold text-ink-700 hover:text-crimson-600 px-4 py-2 rounded-xl border border-slate-200 bg-white/70">📍 Use my current location</button>
