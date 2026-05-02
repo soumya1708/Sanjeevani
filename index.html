@@ -121,14 +121,16 @@
     </div>
 
     <!-- Radar -->
-    <div id="radar" class="glass-strong rounded-3xl p-8 md:p-10 relative overflow-hidden">
+    <div id="radarContainer" class="glass-strong rounded-3xl p-8 md:p-10 relative overflow-hidden">
       <div class="flex items-start justify-between gap-4 flex-wrap">
         <div>
           <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-crimson-50 text-crimson-700 text-[11px] font-bold tracking-widest">LIVE DONOR RADAR</span>
           <h2 class="font-display mt-3 text-4xl font-black text-ink-900">Scan the 15-min Radius</h2>
           <p class="mt-2 text-ink-500 max-w-md">Pings registered donors near a hospital location. Rare types glow crimson.</p>
         </div>
-        <button id="scanBtn" class="btn-primary shrink-0">🔍 Scan Now</button>
+        <button id="scanBtn" class="btn-primary shrink-0">
+          <span id="scanIcon" class="inline-block">🔍</span> Scan Now
+        </button>
       </div>
       <div class="relative mt-8 rounded-2xl border border-slate-200/70 bg-white/50 p-6 min-h-[260px]">
         <div id="radarEmpty" class="flex flex-col items-center justify-center text-center py-10">
