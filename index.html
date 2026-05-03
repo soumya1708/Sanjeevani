@@ -3,11 +3,10 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Sanjeevani — Right Donor. Right Place. Right Time.</title>
-<meta name="description" content="Sanjeevani routes emergency blood requests to verified donors within a 15-minute radius." />
+<title>Sanjeevani — Right Match. Right Time.</title>
+<meta name="description" content="Sanjeevani connects emergency medical needs with verified donors for blood, plasma, stem cells, organs and more — hyper-local and precise." />
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css" />
 <script>
   tailwind.config = {
     theme: { extend: {
@@ -19,6 +18,36 @@
     }}
   }
 </script>
+<style>
+  .glass { background: rgba(255,255,255,0.85); backdrop-filter: blur(12px); }
+  .glass-strong { background: rgba(255,255,255,0.95); backdrop-filter: blur(16px); }
+  .field { 
+    width: 100%; 
+    padding: 12px 16px; 
+    border: 1px solid #e2e8f0; 
+    border-radius: 12px; 
+    font-size: 15px; 
+    transition: all 0.2s;
+  }
+  .field:focus { 
+    outline: none; 
+    border-color: #e11d48; 
+    box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.1); 
+  }
+  .btn-primary {
+    background: linear-gradient(90deg, #e11d48, #be123c);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 9999px;
+    font-weight: 700;
+    transition: all 0.3s;
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(225, 29, 72, 0.3);
+  }
+  .hidden-section { display: none; }
+</style>
 </head>
 <body class="font-sans bg-white text-ink-800 antialiased">
   <div class="fixed inset-0 -z-10 overflow-hidden">
@@ -36,7 +65,7 @@
       </a>
       <ul class="hidden md:flex items-center gap-8 text-sm font-semibold text-ink-700">
         <li><a href="#register" class="hover:text-crimson-600">Register</a></li>
-        <li><a href="#radar" class="hover:text-crimson-600">Donor Radar</a></li>
+        <li><a href="#radar" class="hover:text-crimson-600">Live Radar</a></li>
         <li><a href="#how" class="hover:text-crimson-600">How it works</a></li>
       </ul>
       <div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-50 border border-emerald-200">
@@ -51,86 +80,189 @@
 
   <section class="max-w-7xl mx-auto px-6 pt-20 pb-12 text-center">
     <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-crimson-50 text-crimson-700 text-xs font-bold tracking-widest">
-      <span class="w-1.5 h-1.5 rounded-full bg-crimson-600"></span> HYPER-LOCAL BLOOD ROUTER
+      <span class="w-1.5 h-1.5 rounded-full bg-crimson-600"></span> HYPER-LOCAL MEDICAL MATCHER
     </span>
     <h1 class="font-display mt-6 text-5xl md:text-7xl lg:text-8xl font-black text-ink-900 leading-[0.95]">
       Seconds <span class="text-crimson-600">Save Lives.</span>
     </h1>
     <p class="mt-6 max-w-2xl mx-auto text-lg text-ink-500 leading-relaxed">
-      We don't spam a city — we summon a <strong class="text-ink-800">precise few</strong>. Sanjeevani routes emergency requests for rare blood and platelets to verified donors within a <strong class="text-ink-800">15-minute radius</strong> of the hospital that needs them.
+      Sanjeevani instantly routes emergency requests for <strong class="text-ink-800">Blood, Plasma, Stem Cells, Bone Marrow & Organs</strong> to verified donors within a <strong class="text-ink-800">15-minute radius</strong>.
     </p>
   </section>
 
   <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 px-6 mb-20">
-        <div class="bg-white border border-slate-100 p-6 rounded-2xl shadow-sm flex items-center gap-4 transition-transform hover:-translate-y-1">
-            <div class="bg-red-50 p-3 rounded-xl text-xl">⏱️</div>
-            <div>
-                <h4 class="font-bold text-sm">15-min radius</h4>
-                <p class="text-xs text-slate-400 font-medium">Walk-time precise</p>
-            </div>
-        </div>
-        <div class="bg-white border border-slate-100 p-6 rounded-2xl shadow-sm flex items-center gap-4 transition-transform hover:-translate-y-1">
-            <div class="bg-red-50 p-3 rounded-xl text-xl">📍</div>
-            <div>
-                <h4 class="font-bold text-sm">Geo-routed</h4>
-                <p class="text-xs text-slate-400 font-medium">No city-wide spam</p>
-            </div>
-        </div>
-        <div class="bg-white border border-slate-100 p-6 rounded-2xl shadow-sm flex items-center gap-4 transition-transform hover:-translate-y-1">
-            <div class="bg-red-50 p-3 rounded-xl text-xl">🛡️</div>
-            <div>
-                <h4 class="font-bold text-sm">Verified donors</h4>
-                <p class="text-xs text-slate-400 font-medium">Hospital-grade trust</p>
-            </div>
-        </div>
+    <div class="bg-white border border-slate-100 p-6 rounded-2xl shadow-sm flex items-center gap-4 transition-transform hover:-translate-y-1">
+      <div class="bg-red-50 p-3 rounded-xl text-xl">⏱️</div>
+      <div>
+        <h4 class="font-bold text-sm">15-min radius</h4>
+        <p class="text-xs text-slate-400 font-medium">Hyper-local matching</p>
+      </div>
     </div>
-    
+    <div class="bg-white border border-slate-100 p-6 rounded-2xl shadow-sm flex items-center gap-4 transition-transform hover:-translate-y-1">
+      <div class="bg-red-50 p-3 rounded-xl text-xl">📍</div>
+      <div>
+        <h4 class="font-bold text-sm">Geo-routed</h4>
+        <p class="text-xs text-slate-400 font-medium">No unnecessary alerts</p>
+      </div>
+    </div>
+    <div class="bg-white border border-slate-100 p-6 rounded-2xl shadow-sm flex items-center gap-4 transition-transform hover:-translate-y-1">
+      <div class="bg-red-50 p-3 rounded-xl text-xl">🛡️</div>
+      <div>
+        <h4 class="font-bold text-sm">Verified donors</h4>
+        <p class="text-xs text-slate-400 font-medium">Hospital-grade trust</p>
+      </div>
+    </div>
+  </div>
+
   <!-- Main 2-column grid -->
   <section class="max-w-7xl mx-auto px-6 pb-20 grid lg:grid-cols-2 gap-8">
-    <!-- Registration -->
+    <!-- Dynamic Registration -->
     <div id="register" class="glass-strong rounded-3xl p-8 md:p-10 relative overflow-hidden">
-      <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-crimson-50 text-crimson-700 text-[11px] font-bold tracking-widest">DONOR REGISTRY</span>
-      <h2 class="font-display mt-4 text-4xl font-black text-ink-900">Join the Router</h2>
-      <p class="mt-2 text-ink-500">Register once. Get notified only when you're the right match.</p>
-      <form id="donorForm" class="mt-8 space-y-5">
+      <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-crimson-50 text-crimson-700 text-[11px] font-bold tracking-widest">UNIVERSAL DONOR REGISTRY</span>
+      <h2 class="font-display mt-4 text-4xl font-black text-ink-900">Become a Lifesaver</h2>
+      <p class="mt-2 text-ink-500">Register once. Get notified only for compatible matches near you.</p>
+      
+      <form id="donorForm" class="mt-8 space-y-6">
+        <!-- Asset Type -->
         <div>
-          <label class="text-[11px] font-bold tracking-widest text-ink-500 mb-2 block">FULL NAME</label>
-          <input id="name" name="name" type="text" required placeholder="Jane Doe" class="field" />
-        </div>
-        <div>
-          <label class="text-[11px] font-bold tracking-widest text-ink-500 mb-2 block">BLOOD GROUP</label>
-          <select id="bloodGroup" name="bloodGroup" required class="field">
-            <option value="">Select group</option>
-            <option>A+</option><option>A-</option><option>B+</option><option>B-</option>
-            <option>AB+</option><option>AB-</option><option>O+</option><option>O-</option>
+          <label class="text-[11px] font-bold tracking-widest text-ink-500 mb-2 block">WHAT WOULD YOU LIKE TO DONATE?</label>
+          <select id="asset-type" name="assetType" required class="field">
+            <option value="">Select Asset</option>
+            <option value="blood">Whole Blood / Platelets</option>
+            <option value="plasma">Plasma</option>
+            <option value="stem">Stem Cells / Bone Marrow</option>
+            <option value="organ">Transplant Organs</option>
           </select>
         </div>
-        <div class="grid grid-cols-2 gap-4">
+
+        <!-- Global Fields -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div>
-            <label class="text-[11px] font-bold tracking-widest text-ink-500 mb-2 block">LATITUDE</label>
-           <input id="lat" name="lat" type="number" step="any" required placeholder="22.5726" class="field" />
+            <label class="text-[11px] font-bold tracking-widest text-ink-500 mb-2 block">FULL NAME</label>
+            <input name="name" type="text" required placeholder="Jane Doe" class="field" />
           </div>
           <div>
-            <label class="text-[11px] font-bold tracking-widest text-ink-500 mb-2 block">LONGITUDE</label>
-           <input id="lng" name="lng" type="number" step="any" required placeholder="88.3639" class="field" />
+            <label class="text-[11px] font-bold tracking-widest text-ink-500 mb-2 block">AGE</label>
+            <input name="age" type="number" min="18" max="65" required placeholder="28" class="field" />
+          </div>
+          <div>
+            <label class="text-[11px] font-bold tracking-widest text-ink-500 mb-2 block">LOCATION</label>
+            <div class="flex gap-2">
+              <input id="location-input" name="location" type="text" placeholder="City / Area" class="field flex-1" />
+              <button type="button" id="locBtn" class="px-5 py-3 bg-white border border-slate-200 rounded-2xl text-sm font-semibold whitespace-nowrap hover:bg-slate-50">📍 Detect</button>
+            </div>
           </div>
         </div>
-        <button type="button" id="locBtn" class="text-sm font-semibold text-ink-700 hover:text-crimson-600 px-4 py-2 rounded-xl border border-slate-200 bg-white/70">📍 Use my current location</button>
-        <button type="submit" class="btn-primary w-full mt-2">🩸 Activate My Beacon</button>
+
+        <!-- Hidden Conditional Fields -->
+        <div id="blood-fields" class="hidden-section space-y-5">
+          <div>
+            <label class="text-[11px] font-bold tracking-widest text-ink-500 mb-2 block">BLOOD GROUP</label>
+            <select name="bloodGroup" class="field">
+              <option value="">Select group</option>
+              <option>A+</option><option>A-</option><option>B+</option><option>B-</option>
+              <option>AB+</option><option>AB-</option><option>O+</option><option>O-</option>
+            </select>
+          </div>
+          <div>
+            <label class="text-[11px] font-bold tracking-widest text-ink-500 mb-2 block">PRE-MEDICAL HISTORY</label>
+            <textarea name="medicalHistory" rows="3" placeholder="Any chronic conditions, medications, etc." class="field"></textarea>
+          </div>
+          <div>
+            <label class="text-[11px] font-bold tracking-widest text-ink-500 mb-2 block">LAST DONATION DATE</label>
+            <input name="lastDonation" type="date" class="field" />
+          </div>
+        </div>
+
+        <div id="plasma-fields" class="hidden-section space-y-5">
+          <div>
+            <label class="text-[11px] font-bold tracking-widest text-ink-500 mb-2 block">BLOOD GROUP</label>
+            <select name="bloodGroupPlasma" class="field">
+              <option value="">Select group</option>
+              <option>A+</option><option>A-</option><option>B+</option><option>B-</option>
+              <option>AB+</option><option>AB-</option><option>O+</option><option>O-</option>
+            </select>
+          </div>
+          <div>
+            <label class="text-[11px] font-bold tracking-widest text-ink-500 mb-2 block">PRE-MEDICAL HISTORY</label>
+            <textarea name="medicalHistoryPlasma" rows="3" placeholder="Any recent illnesses..." class="field"></textarea>
+          </div>
+          <div>
+            <label class="text-[11px] font-bold tracking-widest text-ink-500 mb-2 block">RECENT INFECTION DATE (if any)</label>
+            <input name="infectionDate" type="date" class="field" />
+          </div>
+          <div>
+            <label class="text-[11px] font-bold tracking-widest text-ink-500 mb-2 block">ANTIBODY STATUS</label>
+            <select name="antibodyStatus" class="field">
+              <option value="">Select</option>
+              <option>Positive (High Titre)</option>
+              <option>Negative</option>
+              <option>Unknown</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="stem-fields" class="hidden-section space-y-5">
+          <div>
+            <label class="text-[11px] font-bold tracking-widest text-ink-500 mb-2 block">BLOOD GROUP</label>
+            <select name="bloodGroupStem" class="field">
+              <option value="">Select group</option>
+              <option>A+</option><option>A-</option><option>B+</option><option>B-</option>
+              <option>AB+</option><option>AB-</option><option>O+</option><option>O-</option>
+            </select>
+          </div>
+          <div>
+            <label class="text-[11px] font-bold tracking-widest text-ink-500 mb-2 block">PRE-MEDICAL HISTORY</label>
+            <textarea name="medicalHistoryStem" rows="3" placeholder="Any relevant medical history..." class="field"></textarea>
+          </div>
+          <div>
+            <label class="text-[11px] font-bold tracking-widest text-ink-500 mb-2 block">HLA MARKERS / REPORT</label>
+            <input name="hlaFile" type="file" accept=".pdf,.jpg,.png" class="field" />
+          </div>
+          <div class="flex items-center gap-3">
+            <input type="checkbox" id="swab-consent" class="w-5 h-5 text-crimson-600">
+            <label for="swab-consent" class="text-sm text-ink-700">I consent to cheek swab / further HLA testing if needed</label>
+          </div>
+        </div>
+
+        <div id="organ-fields" class="hidden-section space-y-5">
+          <div>
+            <label class="text-[11px] font-bold tracking-widest text-ink-500 mb-3 block">ORGANS I PLEDGE TO DONATE</label>
+            <div class="grid grid-cols-2 gap-3 text-sm">
+              <label class="flex items-center gap-2"><input type="checkbox" name="organs" value="heart"> Heart</label>
+              <label class="flex items-center gap-2"><input type="checkbox" name="organs" value="lungs"> Lungs</label>
+              <label class="flex items-center gap-2"><input type="checkbox" name="organs" value="kidney"> Kidney</label>
+              <label class="flex items-center gap-2"><input type="checkbox" name="organs" value="liver"> Liver</label>
+              <label class="flex items-center gap-2"><input type="checkbox" name="organs" value="kidney"> Cornea</label>
+            </div>
+          </div>
+          <div>
+            <label class="text-[11px] font-bold tracking-widest text-ink-500 mb-2 block">HOSPITAL REGISTRY / ID (if any)</label>
+            <input name="hospitalRegistry" type="text" placeholder="e.g. NOTTO ID" class="field" />
+          </div>
+          <div>
+            <label class="text-[11px] font-bold tracking-widest text-ink-500 mb-2 block">BLOOD GROUP</label>
+            <select name="bloodGroupOrgan" class="field">
+              <option value="">Select group</option>
+              <option>A+</option><option>A-</option><option>B+</option><option>B-</option>
+              <option>AB+</option><option>AB-</option><option>O+</option><option>O-</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-primary w-full mt-4">🩸 Activate My Beacon</button>
       </form>
     </div>
 
     <!-- Radar -->
-    <div id="radarContainer" class="glass-strong rounded-3xl p-8 md:p-10 relative overflow-hidden">
+    <div id="radar" class="glass-strong rounded-3xl p-8 md:p-10 relative overflow-hidden">
       <div class="flex items-start justify-between gap-4 flex-wrap">
         <div>
-          <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-crimson-50 text-crimson-700 text-[11px] font-bold tracking-widest">LIVE DONOR RADAR</span>
-          <h2 class="font-display mt-3 text-4xl font-black text-ink-900">Scan the 15-min Radius</h2>
-          <p class="mt-2 text-ink-500 max-w-md">Pings registered donors near a hospital location. Rare types glow crimson.</p>
+          <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-crimson-50 text-crimson-700 text-[11px] font-bold tracking-widest">LIVE MEDICAL RADAR</span>
+          <h2 class="font-display mt-3 text-4xl font-black text-ink-900">Scan Nearby Matches</h2>
+          <p class="mt-2 text-ink-500 max-w-md">Find verified donors for any medical asset near a hospital location.</p>
         </div>
-        <button id="scanBtn" class="btn-primary shrink-0">
-          <span id="scanIcon" class="inline-block">🔍</span> Scan Now
-        </button>
+        <button id="scanBtn" class="btn-primary shrink-0">🔍 Scan Now</button>
       </div>
       <div class="relative mt-8 rounded-2xl border border-slate-200/70 bg-white/50 p-6 min-h-[260px]">
         <div id="radarEmpty" class="flex flex-col items-center justify-center text-center py-10">
@@ -140,46 +272,122 @@
             <svg class="relative text-crimson-600" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
           </div>
           <p class="mt-4 font-bold text-ink-900">Awaiting Radar Scan...</p>
-          <p class="text-sm text-ink-500">Tap "Scan Now" to ping the local donor network.</p>
+          <p class="text-sm text-ink-500">Tap "Scan Now" to find nearby matches.</p>
         </div>
         <div id="donorList" class="hidden grid sm:grid-cols-2 gap-4"></div>
       </div>
     </div>
   </section>
 
-  <section id="how-it-works" class="max-w-6xl mx-auto px-6 pb-24">
-        <div class="text-center mb-16">
-            <span class="bg-red-50 text-red-600 text-[10px] font-bold px-3 py-1 rounded-full uppercase">Workflow</span>
-            <h2 class="text-4xl font-extrabold mt-4 text-slate-900">From ER alert to donor arrival — <span class="text-red-600">in minutes.</span></h2>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-            <div class="p-8 bg-white border border-slate-100 rounded-3xl transition-shadow hover:shadow-xl">
-                <div class="w-10 h-10 bg-slate-900 text-white rounded-xl flex items-center justify-center font-bold mb-6 text-sm">01</div>
-                <h5 class="font-bold mb-3 text-slate-900">ER Request</h5>
-                <p class="text-xs text-slate-500 leading-relaxed font-medium">A hospital flags a rare blood need with required type and quantity.</p>
-            </div>
-            <div class="p-8 bg-white border border-slate-100 rounded-3xl transition-shadow hover:shadow-xl">
-                <div class="w-10 h-10 bg-slate-900 text-white rounded-xl flex items-center justify-center font-bold mb-6 text-sm">02</div>
-                <h5 class="font-bold mb-3 text-slate-900">Geo-Match</h5>
-                <p class="text-xs text-slate-500 leading-relaxed font-medium">Sanjeevani filters donors by blood group, availability, and walk-radius.</p>
-            </div>
-            <div class="p-8 bg-white border border-slate-100 rounded-3xl transition-shadow hover:shadow-xl">
-                <div class="w-10 h-10 bg-slate-900 text-white rounded-xl flex items-center justify-center font-bold mb-6 text-sm">03</div>
-                <h5 class="font-bold mb-3 text-slate-900">Precision Alerts</h5>
-                <p class="text-xs text-slate-500 leading-relaxed font-medium">Only matched donors are notified — no panic, no city-wide noise.</p>
-            </div>
-            <div class="p-8 bg-white border border-slate-100 rounded-3xl transition-shadow hover:shadow-xl">
-                <div class="w-10 h-10 bg-slate-900 text-white rounded-xl flex items-center justify-center font-bold mb-6 text-sm">04</div>
-                <h5 class="font-bold mb-3 text-slate-900">Donor Arrives</h5>
-                <p class="text-xs text-slate-500 leading-relaxed font-medium">Verified donor confirms and is routed directly to the emergency room.</p>
-            </div>
-        </div>
-    </section>
+  <section id="how" class="max-w-6xl mx-auto px-6 pb-24">
+    <div class="text-center mb-16">
+      <span class="bg-red-50 text-red-600 text-[10px] font-bold px-3 py-1 rounded-full uppercase">Workflow</span>
+      <h2 class="text-4xl font-extrabold mt-4 text-slate-900">From emergency alert to donor arrival — <span class="text-red-600">in minutes.</span></h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+      <div class="p-8 bg-white border border-slate-100 rounded-3xl transition-shadow hover:shadow-xl">
+        <div class="w-10 h-10 bg-slate-900 text-white rounded-xl flex items-center justify-center font-bold mb-6 text-sm">01</div>
+        <h5 class="font-bold mb-3 text-slate-900">Emergency Request</h5>
+        <p class="text-xs text-slate-500 leading-relaxed font-medium">Hospital posts urgent need for blood, plasma, stem cells or organ.</p>
+      </div>
+      <div class="p-8 bg-white border border-slate-100 rounded-3xl transition-shadow hover:shadow-xl">
+        <div class="w-10 h-10 bg-slate-900 text-white rounded-xl flex items-center justify-center font-bold mb-6 text-sm">02</div>
+        <h5 class="font-bold mb-3 text-slate-900">Intelligent Geo-Match</h5>
+        <p class="text-xs text-slate-500 leading-relaxed font-medium">System matches blood group, medical profile &amp; 15-min radius.</p>
+      </div>
+      <div class="p-8 bg-white border border-slate-100 rounded-3xl transition-shadow hover:shadow-xl">
+        <div class="w-10 h-10 bg-slate-900 text-white rounded-xl flex items-center justify-center font-bold mb-6 text-sm">03</div>
+        <h5 class="font-bold mb-3 text-slate-900">Precision Alerts</h5>
+        <p class="text-xs text-slate-500 leading-relaxed font-medium">Only the most suitable donors are notified privately.</p>
+      </div>
+      <div class="p-8 bg-white border border-slate-100 rounded-3xl transition-shadow hover:shadow-xl">
+        <div class="w-10 h-10 bg-slate-900 text-white rounded-xl flex items-center justify-center font-bold mb-6 text-sm">04</div>
+        <h5 class="font-bold mb-3 text-slate-900">Donor Reaches Hospital</h5>
+        <p class="text-xs text-slate-500 leading-relaxed font-medium">Verified donor confirms and is guided to the facility.</p>
+      </div>
+    </div>
+  </section>
 
   <footer class="border-t border-slate-200/70 bg-white/60 backdrop-blur">
-    <div class="max-w-7xl mx-auto px-6 py-8 text-center text-sm text-ink-500">© 2026 Sanjeevani — Right Donor. Right Place. Right Time.</div>
+    <div class="max-w-7xl mx-auto px-6 py-8 text-center text-sm text-ink-500">© 2026 Sanjeevani — Right Match. Right Place. Right Time.</div>
   </footer>
 
-  <script src="app.js"></script>
+  <script>
+    // Tailwind script already included via CDN
+
+    // Dynamic form fields
+    const assetSelect = document.getElementById('asset-type');
+    const bloodFields = document.getElementById('blood-fields');
+    const plasmaFields = document.getElementById('plasma-fields');
+    const stemFields = document.getElementById('stem-fields');
+    const organFields = document.getElementById('organ-fields');
+
+    function showFields(type) {
+      bloodFields.classList.add('hidden-section');
+      plasmaFields.classList.add('hidden-section');
+      stemFields.classList.add('hidden-section');
+      organFields.classList.add('hidden-section');
+
+      if (type === 'blood') bloodFields.classList.remove('hidden-section');
+      else if (type === 'plasma') plasmaFields.classList.remove('hidden-section');
+      else if (type === 'stem') stemFields.classList.remove('hidden-section');
+      else if (type === 'organ') organFields.classList.remove('hidden-section');
+    }
+
+    assetSelect.addEventListener('change', (e) => {
+      showFields(e.target.value);
+    });
+
+    // Location button
+    document.getElementById('locBtn').addEventListener('click', () => {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition((position) => {
+          const lat = position.coords.latitude.toFixed(4);
+          const lng = position.coords.longitude.toFixed(4);
+          document.getElementById('location-input').value = `Lat: ${lat}, Lng: ${lng}`;
+          alert('Location detected successfully!');
+        }, () => {
+          alert('Unable to retrieve your location.');
+        });
+      } else {
+        alert('Geolocation is not supported by your browser.');
+      }
+    });
+
+    // Form submission
+    document.getElementById('donorForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('✅ Registration successful! Your beacon has been activated.');
+      // In real app, send data to backend
+    });
+
+    // Scan button (demo)
+    document.getElementById('scanBtn').addEventListener('click', () => {
+      const empty = document.getElementById('radarEmpty');
+      const list = document.getElementById('donorList');
+      empty.classList.add('hidden');
+      list.classList.remove('hidden');
+      list.innerHTML = `
+        <div class="bg-white border border-emerald-100 p-4 rounded-2xl">
+          <div class="flex justify-between">
+            <div>
+              <p class="font-bold">Rahul Sharma</p>
+              <p class="text-xs text-emerald-600">O+ • 8 min away</p>
+            </div>
+            <span class="text-2xl">🩸</span>
+          </div>
+        </div>
+        <div class="bg-white border border-amber-100 p-4 rounded-2xl">
+          <div class="flex justify-between">
+            <div>
+              <p class="font-bold">Priya Patel</p>
+              <p class="text-xs text-amber-600">Plasma • 12 min away</p>
+            </div>
+            <span class="text-2xl">💧</span>
+          </div>
+        </div>
+      `;
+    });
+  </script>
 </body>
 </html>
