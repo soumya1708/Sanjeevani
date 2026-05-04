@@ -1,0 +1,30 @@
+### TEST 1: The "Sick" Donor (AI should REJECT this)
+POST http://localhost:8081/api/donors
+Content-Type: application/json
+
+{
+  "name": "Solo Tester",
+  "bloodGroup": "O-",
+  "assetType": "blood",
+  "location": "22.5726,88.3639",
+  "medicalHistory": "I have a high fever right now, a severe cough, and I took strong antibiotics this morning."
+}
+
+###
+
+### TEST 2: The "Healthy" Donor (AI should APPROVE this)
+POST http://localhost:8081/api/donors
+Content-Type: application/json
+
+{
+  "name": "Healthy Tester",
+  "bloodGroup": "A+",
+  "assetType": "blood",
+  "location": "22.5726,88.3639",
+  "medicalHistory": "I am completely healthy. No recent illnesses, no medications, no tattoos in the last year."
+}
+
+###
+
+### TEST 3: Check the Database (Live Radar Test)
+GET http://localhost:8081/api/donors
